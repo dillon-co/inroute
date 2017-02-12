@@ -1,0 +1,54 @@
+<br><br><div class="container">
+  <%= form_for @new_request, :html => {  } do |f| %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %><br><br>
+      <%= f.label :phone_number %><br>
+      <%= f.text_field :phone_number %><br><br>
+      <%= f.label "Tell us about your car so we can find it" %><br>
+      <%= f.text_area :car_features %><br><br>
+  <% end %>
+  <div id='demo'>
+      <h1></h1>
+  </div>
+  <button class='btn btn-primary round' onclick="geoFindMe()">
+      <h2>Send My Location</h2>
+   </button>
+  </div>
+
+<script>
+
+function geoFindMe() {
+  var output = document.getElementById("demo");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+    var name = document.getElementById("service_request_name").value;
+    var phoneNumber = document.getElementById("service_request_phone_number").value;
+    var carFeatures = document.getElementById("service_request_car_features").value;
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var dataHash = {name: name, phone_number: phoneNumber, car_features: carFeatures, latitude: latitude, longitude: longitude}
+    $.post(window.location.origin+'/create_request', {request_hash: dataHash})
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p><br><h3>Sending Your Location Now<h3>';
+
+    var img = new Image();
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
+
+
+
+  }
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  }
+  output.innerHTML = "<p>Locating…</p>";
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+
+</script>

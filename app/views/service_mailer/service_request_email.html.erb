@@ -1,0 +1,11 @@
+<h2>
+  <%= @request.name %> Needs Help!
+</h2>
+<h4>Phone Number: <%= @request.phone_number %></h4>
+<h3>Car Details</h3>
+<h4><%= @request.car_features %></h4>
+
+<h1>Latitude: <%= @request.latitude %></h1>
+<h1>longitude: <%= @request.longitude %></h1>
+
+<%#= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@request.latitude},#{@request.longitude}&zoom=13&size=300x300&sensor=false") %>
