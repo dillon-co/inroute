@@ -3,6 +3,7 @@ class ServiceMailer < ApplicationMailer
 
   def service_request_email(request)
     @request = request
-    mail(to: 'hello@helpinroute.com', subject: "RoadSide Service Needed!").deliver
+    response = mail(to: 'hello@helpinroute.com', subject: "RoadSide Service Needed!")
+    response.deliver
   end
 end
