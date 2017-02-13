@@ -1,5 +1,5 @@
 class ServiceMailer < ApplicationMailer
-  default from: 'dilloncortez@gmail.com'
+  default from: 'admin@helpsinroute.com'
 
   def service_request_email(request)
     @request = request
