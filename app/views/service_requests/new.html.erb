@@ -40,6 +40,7 @@ function geoFindMe() {
     var longitude = position.coords.longitude;
     var dataHash = {name: name, phone_number: phoneNumber, car_features: carFeatures, latitude: latitude, longitude: longitude}
     var xmlhttp =  new XMLHttpRequest();
+    console.log(dataHash)
     xmlhttp.open('POST', 'https://www.helpsinroute.com/create_request', true);
     xmlhttp.withCredentials = true
     xmlhttp.setRequestHeader("Access-Control-Allow-Origin", true);
