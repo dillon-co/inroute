@@ -3,12 +3,22 @@
   <head>
     <title>Inroute</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar bg-faded">
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="#"></a>
+      <a class="navbar-brand" href="#">
+        <%= image_tag('inroutelogo3_white', height: 70) %>
+      </a>
+    </nav>
+    <div class='over-lay'
+      <%= yield %>
+    </div>
   </body>
 </html>

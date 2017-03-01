@@ -1,20 +1,27 @@
-<br><br><div class="container">
-  <%= form_for @new_request, :html => {  } do |f| %>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %><br><br>
-      <%= f.label :phone_number %><br>
-      <%= f.text_field :phone_number %><br><br>
-      <%= f.label "Tell us about your car so we can find it" %><br>
-      <%= f.text_area :car_features %><br><br>
-  <% end %>
-  <div id='demo'>
-      <h1></h1>
-  </div>
-  <button class='btn btn-primary round' onclick="geoFindMe()">
-      <h2>Send My Location</h2>
-   </button>
-  </div>
+<br><br><br><br><br><br><br><br><br>
 
+<div class="center container main-title">
+  <div class='row justify-content-md-center'>
+    <h1><strong>Tell Us Your Location and We'll Come Save You!</strong></h1>
+  </div>
+  <div class='row justify-content-md-center inputs'>
+    <input class='location-form' id='service_request_name' type='text' placeholder='Name'></input>
+    <input class='location-form' id='service_request_phone_number' type='text' placeholder='Phone Number'></input><br><br>
+  </div>
+    <div class='row justify-content-md-center'>
+      <input class='location-form' id='service_request_car_features' type='text' placeholder='Car Features'></textarea><br><br>
+    </div>
+    <div class="row justify-content-md-center">
+      <div id='demo' class=''>
+        <h1></h1>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <button class='btn round' onclick="geoFindMe()">
+        <h5>Send My Location</h5>
+      </button>
+    </div>
+</div>
 <script>
 
 function geoFindMe() {
@@ -32,15 +39,17 @@ function geoFindMe() {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
     var dataHash = {name: name, phone_number: phoneNumber, car_features: carFeatures, latitude: latitude, longitude: longitude}
-    $.post(window.location.origin+'/create_request', {request_hash: dataHash})
+    var xmlhttp =  new XMLHttpRequest();
+    xmlhttp.open('POST', 'https://www.helpsinroute.com/create_request', true);
+    xmlhttp.withCredentials = true
+    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", true);
+    xmlhttp.send(request_hash=dataHash)
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p><br><h3>Sending Your Location Now<h3>';
 
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
     output.appendChild(img);
-
-
 
   }
 

@@ -17,6 +17,6 @@ class ServiceRequest < ApplicationRecord
   after_create :send_request_email
 
   def send_request_email
-    ServiceMailer.service_request_email(self)
+    ServiceMailer.service_request_email(self).deliver
   end
 end

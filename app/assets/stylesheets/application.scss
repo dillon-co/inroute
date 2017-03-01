@@ -12,3 +12,64 @@
  *
  */
 @import "bootstrap";
+
+
+
+
+body{
+  // background-image:
+  margin-bottom: 0px;
+  background-image: image-url(inroute_city_high_angle);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  vertical-align: top;
+  max-height: 500px;
+  .over-lay{
+    background-color: rgba(7,33,27,0.8);
+    min-height: 1000px;
+  }
+}
+.main-title{
+  vertical-align: middle;
+}
+
+#service_request_car_features{
+  min-width: 600px;
+}
+
+.navbar{
+  background-color: #081423;
+  min-height: 100px;
+}
+
+.location-form{
+  background-image: none;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #D5D5D5;
+  color: #D5D5D5;
+  min-width: 400px;
+  margin-left: 5px;
+}
+
+.location-form:focus {
+ border-bottom: 2px solid #40B040;
+ outline: none;
+}
+
+
+.btn{
+  background: transparent;
+  border: none;
+  color: #40B040;
+}
+
+h1,h3,p{
+  color: #D5D5D5;
+}
+
+h1,h2,h3,h4,h5,h6,p,text{
+  font-family: 'Raleway', sans-serif;
+  // color: #D5D5D5;
+}
