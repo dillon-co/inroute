@@ -1,4 +1,5 @@
 class ServiceRequestsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   def new
     @new_request = ServiceRequest.new
   end
