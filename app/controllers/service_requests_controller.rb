@@ -5,6 +5,7 @@ class ServiceRequestsController < ApplicationController
   end
 
   def create_request
+    puts "\n\n\nparams:\n#{params}\n\n\n"
     request_hash = params["request_hash"].as_json
     request = ServiceRequest.create(request_hash)
     respond_to do |format|
