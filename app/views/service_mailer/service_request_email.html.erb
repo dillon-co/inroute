@@ -8,4 +8,7 @@
 <h1>Latitude: <%= @request.latitude %></h1>
 <h1>longitude: <%= @request.longitude %></h1>
 
+
+<h1>Copy and paste this to google maps</h1>
+<h3><strong><%= @request.latitude %>, <%= @request.longitude %></strong></h3>
 <%#= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@request.latitude},#{@request.longitude}&zoom=13&size=300x300&sensor=false") %>
