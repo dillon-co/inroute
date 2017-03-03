@@ -52,7 +52,7 @@ function geoFindMe() {
       url: window.location.origin+"/create_request",
       data: { request_hash: dataHash }
     })
-    output.innerHTML = "<p class='m-title'>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p><br><h3 class='m-title'>Sending Your Location Now<h3>";
+    output.innerHTML = "<p class='m-title'>Latitude is " + latitude + "° <br>Longitude is " + longitude + "°</p><br><h3 class='m-title'>Sending Your Location Now<h3>";
 
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
