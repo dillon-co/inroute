@@ -78,14 +78,17 @@ body{
 
 
 .btn{
+  margin-top: 100px;
   background: transparent;
   border: none;
   color: #40B040;
 }
 
-h1,h3,p{
+input,.m-title{
   color: #D5D5D5;
 }
+
+
 
 h1,h2,h3,h4,h5,h6,p,text{
   font-family: 'Raleway', sans-serif;
