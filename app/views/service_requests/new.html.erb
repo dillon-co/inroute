@@ -12,7 +12,7 @@
       <input class='location-form' id='service_request_car_features' type='text' placeholder='Car make & model'></textarea><br><br>
     </div>
     <div class="row justify-content-md-center">
-      <div id='demo' class=''>
+      <div id='demo' class='location-div'>
         <h1></h1>
       </div>
     </div>
@@ -52,7 +52,7 @@ function geoFindMe() {
       url: window.location.origin+"/create_request",
       data: { request_hash: dataHash }
     })
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p><br><h3>Sending Your Location Now<h3>';
+    output.innerHTML = "<p class='m-title'>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p><br><h3 class='m-title'>Sending Your Location Now<h3>";
 
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
@@ -62,9 +62,9 @@ function geoFindMe() {
   }
 
   function error() {
-    output.innerHTML = "<p>Unable to retrieve your location</p>";
+    output.innerHTML = "<h3 class='m-title'>Unable to retrieve your location</h3>";
   }
-  output.innerHTML = "<p>Locating…</p>";
+  output.innerHTML = "<h3 class='m-title'>Locating…</h3>";
   navigator.geolocation.getCurrentPosition(success, error);
 }
 

@@ -32,7 +32,7 @@ body{
       // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
       min-height: 700px;
     }
-    @media(min-width: 100px){
+    @media(max-width: 800px){
       min-height: 1700px;
     }
   }
@@ -58,25 +58,23 @@ body{
   color: #D5D5D5;
   min-width: 400px;
   margin-left: 5px;
-  @media(max-width: 1000px) {
+  @media(min-width: 1000px) {
     // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
     min-height: 700px;
   }
-  @media(min-width: 100px){
+  @media(min-width: 700px){
     min-height: 200px;
     min-width: 500px;
     font-weight: bold;
     font-size: 40px;
   }
-
 }
 
 .location-form:focus {
-  border: none
+  border: none;
   border-bottom: 2px solid #40B040;
   outline: none;
 }
-
 
 .btn{
   margin-top: 100px;
@@ -89,9 +87,12 @@ input,.m-title{
   color: #D5D5D5;
 }
 
-
-
 h1,h2,h3,h4,h5,h6,p,text{
   font-family: 'Raleway', sans-serif;
   // color: #D5D5D5;
+}
+
+
+.location-div{
+  margin-top: 40px;
 }
