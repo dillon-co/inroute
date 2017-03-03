@@ -72,8 +72,9 @@ body{
 }
 
 .location-form:focus {
- border-bottom: 2px solid #40B040;
- outline: none;
+  border: none
+  border-bottom: 2px solid #40B040;
+  outline: none;
 }
 
 
