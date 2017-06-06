@@ -13,20 +13,17 @@
  */
 @import "bootstrap";
 
-
-
-
 body{
   // background-image:
   margin-bottom: 0px;
-  background-image: image-url(inroute_city_high_angle);
+  background-image: image-url(INR_OverheadMap);
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
   vertical-align: top;
   max-height: 500px;
   .over-lay{
-    background-color: rgba(7,33,27,0.8);
+    background-color: rgba(255,255,255,0.5);
     @media(min-width: 1000px) {
       min-height: 700px;
     }
@@ -44,16 +41,16 @@ body{
 }
 
 .navbar{
-  background-color: #081423;
-  min-height: 100px;
+  background-color: rgba(255,255,255,0.5);
+  // min-height: 100px;
 }
 
 .location-form{
   background-image: none;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #D5D5D5;
-  color: #D5D5D5;
+  border-bottom: 1px solid rgba(0,0,0,0.87);
+  color: rgba(0,0,0,0.87);
   min-width: 400px;
   margin-left: 5px;
   @media(min-width: 1000px) {
@@ -69,7 +66,7 @@ body{
 
 .location-form:focus {
   border: none;
-  border-bottom: 2px solid #40B040;
+  border-bottom: 2px solid #F05E6C;
   outline: none;
 }
 
@@ -77,11 +74,13 @@ body{
   margin-top: 100px;
   background: transparent;
   border: none;
-  color: #40B040;
+  color: #F05E6C;
 }
 
 input,.m-title{
-  color: #D5D5D5;
+  color: #5664AD;
+  font-weight: bold;
+  // font-family: 'Raleway', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6,p,text{
