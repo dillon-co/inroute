@@ -11,6 +11,15 @@
     <div class='row '>
       <input class='location-form' id='service_request_car_features' type='text' placeholder='Car make & model'></textarea><br><br>
     </div>
+    <br><br><br>
+    <div class="row inputs">
+      <select  class="styled-select slate" id="service_request_issue">
+        <option value="flat tire">Flat Tire</option>
+        <option value="out of gas">Out Of Gas</option>
+        <option value="dead battery">Dead Battery</option>
+      </select>
+    </div>
+
     <div class="row ">
       <div id='demo' class='location-div'>
         <h1></h1>
@@ -37,9 +46,10 @@ function geoFindMe() {
     var name = document.getElementById("service_request_name").value;
     var phoneNumber = document.getElementById("service_request_phone_number").value;
     var carFeatures = document.getElementById("service_request_car_features").value;
+    var issue = document.getElementById("service_request_issue").value;
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    var dataHash = {name: name, phone_number: phoneNumber, car_features: carFeatures, latitude: latitude, longitude: longitude}
+    var dataHash = {name: name, phone_number: phoneNumber, car_features: carFeatures, issue: issue, latitude: latitude, longitude: longitude}
     var xmlhttp =  new XMLHttpRequest();
     console.log(dataHash)
     // xmlhttp.open('POST', 'https://www.helpsinroute.com/create_request', true);
@@ -55,7 +65,7 @@ function geoFindMe() {
     output.innerHTML = "<p class='m-title'>Latitude is " + latitude + "° <br>Longitude is " + longitude + "°</p><br><h3 class='m-title'>Sending Your Location Now<h3>";
 
     var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false&key=<%= ENV['INROUTE_GOOGLE_MAPS_KEY'] %>";
 
     output.appendChild(img);
 

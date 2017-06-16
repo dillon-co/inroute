@@ -92,3 +92,33 @@ h1,h2,h3,h4,h5,h6,p,text{
 .location-div{
   margin-top: 40px;
 }
+
+// .styled-select {
+//    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+//    height: 29px;
+//    overflow: hidden;
+//    width: 240px;
+// }
+//
+// .styled-select select {
+//    background: transparent;
+//    border: none;
+//    font-size: 40px;
+//    height: 29px;
+//    padding: 5px; /* If you add too much padding here, the options won't show in IE */
+//    width: 268px;
+// }
+
+.styled-select.slate {
+   background: rgba(0,0,0,0.0);
+   height: 68px;
+   font-size: 40px;
+   width: 480px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 45px;
+   height: 34px;
+   width: 268px;
+}
